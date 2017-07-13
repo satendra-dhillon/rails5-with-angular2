@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list.component';
 import { PostShowComponent } from './post/post-show.component';
+import { PostNewComponent } from './post/post-new.component';
 import { PostService} from './post/post.service';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     PostListComponent,
     PostShowComponent,
+    PostNewComponent,
     HomepageComponent
   ],
   imports: [

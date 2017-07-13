@@ -7,7 +7,7 @@ import { Http } from '@angular/http'
 @Component({
 	selector: 'post-show',
 	templateUrl: 'post-show.component.html',
-	styleUrls: ['post-list.component.css']
+	styleUrls: ['post.component.css']
 })
 export class PostShowComponent implements OnInit {
 	id: number;
