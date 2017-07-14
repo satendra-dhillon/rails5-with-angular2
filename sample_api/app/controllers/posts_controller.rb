@@ -18,7 +18,18 @@ class PostsController < ApplicationController
 			render json: @post.errors, status: :unprocesssable_entity
 		end
 	end
-	
+
+	def update
+		if @post.update(post_params)
+			render json: @post
+		else
+			render json: @post.errors, status: :unprocesssable_entity
+		end
+	end
+
+	def destroy
+		@post.destroy
+	end
 
 	private
 
