@@ -27,7 +27,15 @@
 				<label for="description">
 					<h3>Describe your Post</h3>
 				</label>
-				<textarea class="form-control" id="description" name="description"
+				<ckeditor
+					name="description"
+					#description='ngModel'
+				    [(ngModel)]="post.description"
+				    [config]="{uiColor: '#5ba6e6'}"
+				    [readonly]="false"
+				    debounce="500">
+				  </ckeditor>
+				<!-- <textarea class="form-control" id="description" name="description"
 					required 
 					#description='ngModel'
 					[(ngModel)]='post.description'
@@ -36,7 +44,7 @@
 					<div [hidden] = 'description.valid || description.pristine' class="alert alert-danger">
 						Description of the post is required
 					</div>
-				</textarea>
+				</textarea> -->
 
 			</div>
 			<button type="submit" class="btn btn-primary" [disabled]="!postForm.form.valid" [hidden]="submitted"> Post Article</button>

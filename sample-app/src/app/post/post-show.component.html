@@ -1,7 +1,8 @@
 <div *ngIf="post">
 	<h2>{{post.title}}</h2>
 	<p> {{post.id}}</p>
-	<p>{{post.description}}</p>
+	<p [innerHTML]="post.description"></p>
+
 
 	<button type="button" (click)="delete(post)" class="btn btn-primary"  > Delete</button>
 	<button type="button" (click)="update(post)" class="btn btn-primary"> Edit</button>
@@ -28,16 +29,25 @@
 				<label for="description">
 					<h3>Describe your Post</h3>
 				</label>
-				<textarea class="form-control" id="description" name="description"
+				<ckeditor
+					name="description"
+					#description='ngModel'
+				    [(ngModel)]="post.description"
+				    [config]="{uiColor: '#5ba6e6'}"
+				    [readonly]="false"
+				    debounce="500">
+				    <div [hidden] = 'description.valid || description.pristine' class="alert alert-danger">
+						Description of the post is required
+					</div>
+				</ckeditor>
+				<!-- <textarea class="form-control" id="description" name="description"
 					required 
 					#description='ngModel'
 					[(ngModel)]='post.description'
 					rows="3" 
 					>
-					<div [hidden] = 'description.valid || description.pristine' class="alert alert-danger">
-						Description of the post is required
-					</div>
-				</textarea>
+					
+				</textarea> -->
 
 			</div>
 			<button type="submit" class="btn btn-primary" (click)="update(post); onUpdateClicked() " [disabled]="!postForm.form.valid">Update Post</button>

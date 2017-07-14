@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router'
+import { CKEditorModule } from 'ng2-ckeditor';
 
 
 import { AppComponent } from './app.component';
@@ -27,7 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     FormsModule,
     HttpModule,
-    RouterModule
+    RouterModule,
+    CKEditorModule
   ],
   providers: [
   	PostService
